@@ -1,0 +1,26 @@
+div.slideshow img {
+	margin: 0 auto;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+}
+
+div.loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('loaderWhite.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 768px;
+	height: 768px
+}
+
+div.slideshow span.image-wrapper {
+	display: block;
+}
+
+div.slideshow a.advance-link {
+	display: block;
+	width: 100%;
+	text-align: center;
+}

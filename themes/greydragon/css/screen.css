@@ -7,6 +7,7 @@
  * Color rules for font/background/lines can be found in dedicated colorpack files
  */
 
+@import url(gallery.common.css);
 @import url(layout.css);
 @import url(menus.css);
 @import url(forms.css);
@@ -49,8 +50,7 @@ h5 { font-weight: bold; }
 .ui-icon-plus { background-position: -14px  -129px; }
 .ui-icon-minus { background-position: -46px  -129px; }
 .ui-icon-note { background-position: -66px  -98px;  }
-
-.ui-icon-comment { background-position: -227px -219px; width: 27px; height: 20px; }
+.ui-icon-closethick { background-position: -96px -128px; }
 .ui-icon-left .ui-icon { float: left; margin-right: .2em; }
 .ui-icon-right .ui-icon { float: right; margin-left: .2em; }
 
@@ -67,7 +67,7 @@ h5 { font-weight: bold; }
 .g-breadcrumbs li.g-first { background-image: none; }
 .g-breadcrumbs li.g-active { padding-right: 0; }
 
-#g-header .g-message-block { position: absolute; z-index: 10; min-width: 30em; padding: 4px 6px; right: 20em; top: 34px; overflow: hidden; font: bold 9pt Arial, verdana, sans-serif; text-align: center; }
+#g-header .g-message-block { position: absolute; z-index: 10; min-width: 30em; padding: 0; right: 20em; top: 34px; overflow: hidden; font: bold 9pt Arial, verdana, sans-serif; text-align: center; }
 
 #g-header #g-login-menu { position: absolute; top: 0.5em; right: 1em; background-color: transparent; display: none; }
 
@@ -180,7 +180,7 @@ div.g-resize:hover .g-more { display: none; visibility: hidden; }
 #g-info .g-description { margin-top: 4px; margin-bottom: 4px; padding: 4px; }
 #g-movie { padding: 6px 0 6px 6px; position: relative; }
 
-.g-movie { margin: 0 auto; }
+#g-item a.g-movie { display: block; margin: 0 auto; }
 
 #g-albumheader h1 { margin-bottom: 6px; }
 

@@ -36,4 +36,26 @@ class GreyDragon_Controller extends Controller {
     print $v;
   }
 */
+public function reloadData($itemid) {
+		$curritem = ORM::factory("item", $itemid);			
+		json::reply(
+			array(
+				/*"title" => array(
+					"sel" => "title",
+					"type" => "text",
+					"val" => $curritem->title
+				),*/
+				"g-info" => array(
+					"sel" => "#g-info",
+					"type" => "html",
+					"val" => "<h1>" .$curritem->title ."</h1>"
+				),
+				"description" => array(
+					"sel" => "#g-metadata div li.g-description",
+					"type" => "html",
+					"val" => ($curritem->description==null?"":$curritem->description)
+				)
+			)
+		);
+	}
 }

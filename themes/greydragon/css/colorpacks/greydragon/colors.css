@@ -28,6 +28,7 @@ a { color: #6392CF !important; }
 #g-info .g-description { border: #737373 1px solid; }
 
 .g-thumbslide, .g-thumbslide-ext { border: 1px solid #303E43; background: #1E1E1E url('images/image-thumb.gif') repeat-x; }
+.g-album .g-thumbslide, .g-album .g-thumbslide-ext { background: #303030 url('images/image-thumb-album.gif') repeat-x; }
 .g-thumbcrop  { border: 1px solid #303E43; }
 
 .g-album .g-thumbslide, 
@@ -107,13 +108,7 @@ div.g-resize .g-more { border: 1px solid #999; background: #1E1E1E; filter:alpha
 
 /* forms.css - Organize ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-#sb-content.html_ajax #g-organize { border: #303030 1px solid; }
-
-#g-organize-detail { border-left: #303030 1px solid; }
-#g-organize .g-message-block { border-bottom: #303030 1px solid; }
-.g-organize-microthumb-grid-cell { background-color: #303030; }
-.g-organize-microthumb { background-color: #707070; }
-#g-organize-controls { border-top: #303030 1px solid; }
+#sb-content.html_ajax #g-organize { border: #303030 1px solid; color: #fff; }
 
 /* forms.css - User Profile ~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -176,3 +171,8 @@ table.calendar td a     { color: red !important; }
 /* modules.css - Basket ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 #checkout legend { background: url(images/section.png) repeat-x; }
+
+/* forms.css - Common ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.ui-dialog .ui-dialog-titlebar { background: #101415 url('images/section.png') repeat-x; }
+.ui-widget-content { border: 1px solid #303030; background-color: #1a2022; color: #bbb; }

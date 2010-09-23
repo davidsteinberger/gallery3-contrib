@@ -1,24 +1,50 @@
 === Grey Dragon Theme ===
 Grey Dragon Theme - a custom theme for Gallery 3
 
-This theme was designed and built by Serguei Dosyukov, whose blog you will find at http://blog.dragonsoft.us/
+This theme was designed and built by Serguei Dosyukov, whose blog you will find
+at http://blog.dragonsoft.us/
 Copyright (C) 2009-2010 Serguei Dosyukov
 
 Tested up to: G3 3.0 RC2 (Santa Fe) Experimental
 Minimum requirement: G3 3.0 RC2 (Santa Fe) Experimental
 Donate link: http://blog.dragonsoft.us/gallery-3/
 
-This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street Fifth Floor, Boston, MA  02110-1301, USA.
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version. This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+details. You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street Fifth Floor, Boston, MA  02110-1301, USA.
 
 === Open issues ===
-- Issue with Delete functionality
-- Support for new organize module
-- Support for Register module
-- Issue with Comments module
+- RTL layout support
+- CSS clean up for dialogs
                             
 === Changelog ===
+
+version 2.4.1
+- Organize module support reenabled
+- Register module support reenabled
+- Partial support for Shopping Basket module
+- CSS clean-up after dialog engine conversion - round #1
+- Fixed issue with Exif dialog not properly rendered
+
+version 2.4.0
+- Apply g-button style only to forms
+- Fix to properly display videos
+- Fix to account for changes in Comments module
+- Favicon removed from theme's package
+- Fixed uninitialized state warnings of the variables in PHP protected mode
+- Album thumbs now have "lighter" background
+- First draft to change how dialogs are handled - switched to standard code
+- ADMIN: G3 Core version requirement is set to 32
+- ADMIN: Added missing settings initializations
+- ADMIN: Fixed issue with Navigator position setting not being persisted
+- ADMIN: Abstract admin form styles for reuse from regular module admin panels
+- ADMIN: Added option to specify favicon location. If not specified default G3 icon is used.
 
 version 2.3.1
 - Hide Rotate operations for pictures since they are not supported by the theme

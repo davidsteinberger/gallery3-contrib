@@ -5,6 +5,7 @@ class Theme_View extends Theme_View_Core {
   protected $sidebarvisible;
   protected $sidebarallowed;
   protected $logopath;
+  protected $favicon = "lib/images/favicon.ico";
   protected $thumb_descmode = "overlay";
   protected $photo_descmode = "overlay";
   protected $is_thumbmeta_visible = TRUE;
@@ -38,7 +39,11 @@ class Theme_View extends Theme_View_Core {
   }
 
   public function load_sessioninfo() {
-    $this->sidebarvisible = $_REQUEST['sb'];
+  	
+  	try { 
+  		$this->sidebarvisible = $_REQUEST['sb'];
+  	} catch (Exception $e) {
+  	};
 
     if (empty($this->sidebarvisible)):
       $session = Session::instance();
@@ -70,6 +75,7 @@ class Theme_View extends Theme_View_Core {
     endif;
 
     $this->logopath = $this->ensureoptionsvalue("logo_path", url::file("lib/images/logo.png"));
+    $this->favicon = $this->ensurevalue(module::get_var("gallery", "favicon_url"), url::file("lib/images/favicon.ico"));
     $this->show_guest_menu = $this->ensureoptionsvalue("show_guest_menu", FALSE);
     $this->horizontal_crop = $this->ensureoptionsvalue("horizontal_crop", FALSE);
     $this->thumb_descmode = $this->ensureoptionsvalue("thumb_descmode", "overlay");
@@ -167,9 +173,9 @@ class Theme_View extends Theme_View_Core {
       return "";
     endif;
 
-    $content_menu = ($this->sidebar_menu_item("left", $url, "Sidebar Left", "left"));
-    $content_menu .= ($this->sidebar_menu_item("none", $url, "No Sidebar", "full"));
-    $content_menu .= ($this->sidebar_menu_item("right", $url, "Sidebar Right", "right"));
+    $content_menu = ($this->sidebar_menu_item("left", $url, t("Sidebar Left"), "left"));
+    $content_menu .= ($this->sidebar_menu_item("none", $url, t("No Sidebar"), "full"));
+    $content_menu .= ($this->sidebar_menu_item("right", $url, t("Sidebar Right"), "right"));
     return '<ul id="g-viewformat">' . $content_menu . '</ul>';
   }
 
@@ -214,7 +220,7 @@ class Theme_View extends Theme_View_Core {
       $content .= '<strong>' . $this->bb2html(html::purify($item->title), 2) . '</strong>';   // html::purify(text::limit_chars($item->title, 44, "…"))
       $content .= '</span>';
     endif;
-    $content .= '<a '. $_shift . ' class="g-thumlink" href="' . $item->url() . '">';
+    $content .= '<a '. $_shift . ' class="g-thumlink" href="' . $item->url() . '#' . urlencode($item->id) . '">';
     if (($item->thumb_height == 0) or ($item->thumb_width == 0)):
       $content .= '<img title="No Image" alt="No Image" src="' . $this->url("images/missing-img.png") . '"/>';
     else:

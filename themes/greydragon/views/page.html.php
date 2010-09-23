@@ -18,7 +18,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <?= "  <title>"; ?>
 <? if ($page_title): ?>
-<?=  $page_title ?>
+<?=  $page_title ?> 
 <? else: ?>
 <?   if ($theme->item()): ?>
 <?     if ($theme->item()->is_album()): ?>
@@ -41,15 +41,35 @@
   <?= '<meta name="msnbot" content="noindex, nofollow, noarchive, nosnippet, noodp" />' . "\n"; ?>
   <?= '<meta name="teoma" content="noindex, nofollow, noarchive" />' . "\n"; ?>
 <? endif; ?>
-<link rel="shortcut icon" href="<?= $theme->url("images/favicon.ico") ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?= $theme->favicon ?>" type="image/x-icon" />
 <?= $theme->script("jquery.js") ?>
 <?= $theme->script("jquery.form.js") ?>
 <?= $theme->script("jquery-ui.js") ?>
 <? if ($theme->page_subtype == "movie"): ?>
 <?= $theme->script("flowplayer.js") ?>
 <? endif ?>
+<?= $theme->script("gallery.common.js") ?>
+<? /* MSG_CANCEL is required by gallery.dialog.js */ ?>
+<script type="text/javascript">
+  var MSG_CANCEL = <?= t('Cancel')->for_js() ?>;
+</script>
 <?= $theme->script("gallery.ajax.js") ?>
+<?= $theme->script("gallery.dialog.js") ?>
 <?= $theme->head() ?>
+
+<!-- Galleriffic BEGIN -->
+<script type="text/javascript" src="<?= $theme->url("js/jquery.galleriffic.js") ?>"></script>
+<script type="text/javascript" src="<?= $theme->url("js/jquery.history.js") ?>"></script>
+<link rel="stylesheet" href="<?= $theme->url("css/galleriffic.css") ?>" type="text/css" />
+<!-- Optional Opacity-Roller-Effect BEGIN -->
+<script type="text/javascript" src="<?= $theme->url("js/jquery.opacityrollover.js") ?>"></script>
+<!-- Optional Opacity-Roller-Effect END -->
+<script type="text/javascript" src="<?= $theme->url("js/jquery.ajaxGallery3.js") ?>"></script>
+<!--[if lte IE 6]>
+	<script src="<?= $theme->url("js/jquery.ie6.js") ?>" type="text/javascript" charset="utf-8"></script>
+<![endif]-->
+<!-- Galleriffic END -->
+
 <link rel="stylesheet" href="<?= $theme->url("css/screen.css") ?>" type="text/css" media="screen,print,projection" />
 <link rel="stylesheet" href="<?= $theme->url("css/colorpacks/" . $theme->color_pack . "/colors.css") ?>" type="text/css" media="screen,print,projection" />
 
@@ -62,7 +82,7 @@
 
 <script type="text/javascript" src="<?= $theme->url("js/ui.support.js") ?>"></script>
 </head>
-<body>
+<body <?= $theme->body_attributes() ?>>
 <?= $theme->page_top() ?>
 <div id="g-header">
   <?= $theme->header_top() ?>
@@ -76,7 +96,7 @@
 
 <? if ((!$user->guest) or ($theme->show_guest_menu)): ?>
   <div id="g-site-menu" class="<?= ($theme->mainmenu_position == "top")? "top" : "default"; ?>">
-  <?= $theme->site_menu() ?>
+  <?= $theme->site_menu($theme->item() ? "#g-item-id-{$theme->item()->id}" : "") ?>
   </div>
 <? endif ?>
   <?= $theme->messages() ?>
@@ -92,7 +112,7 @@
 </div>
 <div id="g-main">
   <div id="g-main-in">
-    <?= $theme->sidebar_menu($url) ?>
+    <?= $theme->sidebar_menu($theme->url("")) ?>
     <div id="g-view-menu" class="g-buttonset<?= ($theme->sidebarallowed!="any")? " g-buttonset-shift" : null; ?>">
     <? if ($page_subtype == "album"):?>
       <?= $theme->album_menu() ?>

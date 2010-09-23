@@ -77,3 +77,8 @@
   <?= $theme->add_paginator("bottom"); ?>
   <?= $theme->photo_bottom() ?>
 </div>
+<script type="text/javascript">
+        $(document).ready( function() {
+        	$('#g-photo').ajaxGallery3.init({'controller_path': '<?= url::site("greydragon/reloadData")?>' + "/"});
+		});
+</script>

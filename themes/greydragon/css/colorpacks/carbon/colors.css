@@ -121,7 +121,7 @@ div.g-resize .g-more { border: 1px solid #999; background: #1E1E1E; filter:alpha
 
 /* forms.css - Organize ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-#sb-content.html_ajax #g-organize { border: #303030 1px solid; }
+#sb-content.html_ajax #g-organize { border: #303030 1px solid; color: #fff; }
 
 #g-organize-detail { border-left: #303030 1px solid; }
 #g-organize .g-message-block { border-bottom: #303030 1px solid; }
