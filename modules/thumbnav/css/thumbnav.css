@@ -1,0 +1,6 @@
+/* Thumb Navigator ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  
+.g-thumbnav { text-align: center; padding: 0; }
+.g-navthumb { width: 62px; height: 62px; border: 1px solid transparent; }
+.g-navthumb:hover { background: #fff; filter:alpha(opacity=55); opacity:.55; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=55)"; }
+.g-navthumb.g-current { border-color: #ddd; }
